@@ -1,0 +1,17 @@
+# AI assistant files (never pushed)
+CLAUDE.md
+claude.md
+**/CLAUDE.md
+**/claude.md
+.claude/
+
+# Java build output and files the PoC writes
+poc/out/
+poc/export/
+*.class
+
+# OS / IDE files
+.DS_Store
+.idea/
+*.iml
+.vscode/

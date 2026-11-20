@@ -1,0 +1,362 @@
+=== Appointment Tracking System (PoC) ===
+
+ 1  Import availabilities from CSV
+ 2  Export availabilities to CSV
+ 3  Make availability
+ 4  Search availability
+ 5  Book an appointment
+ 6  Register patient
+ 7  Search patient
+ 8  Add patient to waiting list
+ 9  Offer a freed slot to the waiting list
+ 10 List professionals, services, locations, patients
+ 0  Exit
+Choice: 1
+CSV file to import [data/availabilities.csv]: 
+8 availabilities imported.
+
+ 1  Import availabilities from CSV
+ 2  Export availabilities to CSV
+ 3  Make availability
+ 4  Search availability
+ 5  Book an appointment
+ 6  Register patient
+ 7  Search patient
+ 8  Add patient to waiting list
+ 9  Offer a freed slot to the waiting list
+ 10 List professionals, services, locations, patients
+ 0  Exit
+Choice: 10
+Professionals:
+  HP1   Dr. Amélie Tremblay          Family Medicine        slots: 2
+  HP2   Dr. Marc Bouchard            Cardiology             slots: 2
+  HP3   Nurse Practitioner Sophie Gagnon Primary Care           slots: 1
+  HP4   Dr. Nadia Haddad             Dermatology            slots: 2
+  HP5   Dr. David Roy                Orthopedics            slots: 1
+Medical services:
+  S1 General consultation (Family Medicine)
+  S2 Primary care assessment (Primary Care)
+  S3 Cardiology consultation (Cardiology, referral required)
+  S4 Dermatology consultation (Dermatology, referral required)
+  S5 Orthopedic evaluation (Orthopedics, referral required)
+Locations:
+  L1 Clinique Centre-Ville
+  L2 Clinique Rosemont
+Patients:
+  P1   Émilie Lavoie          born 1999-01-01  tel 514-555-0101  ins. LAVE99010101  referrals: [R1: Cardiology, reason "Palpitations", priority High, OPEN]
+  P2   Olivier Côté           born 1985-06-15  tel 514-555-0102  ins. COTO85061502
+
+ 1  Import availabilities from CSV
+ 2  Export availabilities to CSV
+ 3  Make availability
+ 4  Search availability
+ 5  Book an appointment
+ 6  Register patient
+ 7  Search patient
+ 8  Add patient to waiting list
+ 9  Offer a freed slot to the waiting list
+ 10 List professionals, services, locations, patients
+ 0  Exit
+Choice: 4
+Leave a criterion blank to ignore it.
+Professional id: 
+Specialty (e.g. Cardiology): Cardiology
+From date (YYYY-MM-DD): 
+To date (YYYY-MM-DD): 
+From time (HH:MM): 
+To time (HH:MM): 
+2 open availabilities:
+  AV3   2026-11-02 10:00-11:00  Dr. Marc Bouchard (Cardiology) at L1  [AVAILABLE]
+  AV8   2026-11-04 14:00-15:00  Dr. Marc Bouchard (Cardiology) at L1  [AVAILABLE]
+
+ 1  Import availabilities from CSV
+ 2  Export availabilities to CSV
+ 3  Make availability
+ 4  Search availability
+ 5  Book an appointment
+ 6  Register patient
+ 7  Search patient
+ 8  Add patient to waiting list
+ 9  Offer a freed slot to the waiting list
+ 10 List professionals, services, locations, patients
+ 0  Exit
+Choice: 3
+Professional id (e.g. HP1): HP1
+Location id [L1]: L1
+Start date (YYYY-MM-DD): 2026-11-01
+End date (YYYY-MM-DD): 2026-11-30
+Repeat: W = day(s) of week, M = monthly [W]: W
+Day(s) of week, e.g. MON or MON,WED: MON
+Start time (HH:MM): 09:00
+End time (HH:MM): 12:00
+Slot length in minutes [30]: 30
+28 availabilities created (every [MONDAY]), 2 skipped because they overlap existing slots.
+  first: AV9   2026-11-02 10:00-10:30  Dr. Amélie Tremblay (Family Medicine) at L1  [AVAILABLE]
+  last:  AV36  2026-11-30 11:30-12:00  Dr. Amélie Tremblay (Family Medicine) at L1  [AVAILABLE]
+
+ 1  Import availabilities from CSV
+ 2  Export availabilities to CSV
+ 3  Make availability
+ 4  Search availability
+ 5  Book an appointment
+ 6  Register patient
+ 7  Search patient
+ 8  Add patient to waiting list
+ 9  Offer a freed slot to the waiting list
+ 10 List professionals, services, locations, patients
+ 0  Exit
+Choice: 5
+Patient id (blank to search): P1
+Medical services:
+  S1 General consultation (Family Medicine)
+  S2 Primary care assessment (Primary Care)
+  S3 Cardiology consultation (Cardiology, referral required)
+  S4 Dermatology consultation (Dermatology, referral required)
+  S5 Orthopedic evaluation (Orthopedics, referral required)
+Service id: S3
+Professional id (option 4 shows who is free): HP2
+Location id [L1]: L1
+Date (YYYY-MM-DD): 2026-11-02
+Time (HH:MM): 10:00
+Slot held: AV3   2026-11-02 10:00-11:00  Dr. Marc Bouchard (Cardiology) at L1  [AVAILABLE]
+Valid referrals:
+  R1: Cardiology, reason "Palpitations", priority High, OPEN
+Referral id [R1]: R1
+Booked: A1: 2026-11-02 10:00-11:00, Émilie Lavoie with Dr. Marc Bouchard at Clinique Centre-Ville, service Cardiology consultation, referral R1, status BOOKED
+
+ 1  Import availabilities from CSV
+ 2  Export availabilities to CSV
+ 3  Make availability
+ 4  Search availability
+ 5  Book an appointment
+ 6  Register patient
+ 7  Search patient
+ 8  Add patient to waiting list
+ 9  Offer a freed slot to the waiting list
+ 10 List professionals, services, locations, patients
+ 0  Exit
+Choice: 5
+Patient id (blank to search): P2
+Medical services:
+  S1 General consultation (Family Medicine)
+  S2 Primary care assessment (Primary Care)
+  S3 Cardiology consultation (Cardiology, referral required)
+  S4 Dermatology consultation (Dermatology, referral required)
+  S5 Orthopedic evaluation (Orthopedics, referral required)
+Service id: S3
+Professional id (option 4 shows who is free): HP2
+Location id [L1]: L1
+Date (YYYY-MM-DD): 2026-11-02
+Time (HH:MM): 10:00
+Slot unavailable. Next available slots:
+  1. AV8   2026-11-04 14:00-15:00  Dr. Marc Bouchard (Cardiology) at L1  [AVAILABLE]
+Pick a number (blank to cancel): 1
+Slot held: AV8   2026-11-04 14:00-15:00  Dr. Marc Bouchard (Cardiology) at L1  [AVAILABLE]
+Error: referral required, appointment cannot be booked
+
+ 1  Import availabilities from CSV
+ 2  Export availabilities to CSV
+ 3  Make availability
+ 4  Search availability
+ 5  Book an appointment
+ 6  Register patient
+ 7  Search patient
+ 8  Add patient to waiting list
+ 9  Offer a freed slot to the waiting list
+ 10 List professionals, services, locations, patients
+ 0  Exit
+Choice: 5
+Patient id (blank to search): P2
+Medical services:
+  S1 General consultation (Family Medicine)
+  S2 Primary care assessment (Primary Care)
+  S3 Cardiology consultation (Cardiology, referral required)
+  S4 Dermatology consultation (Dermatology, referral required)
+  S5 Orthopedic evaluation (Orthopedics, referral required)
+Service id: S1
+Professional id (option 4 shows who is free): HP1
+Location id [L1]: L1
+Date (YYYY-MM-DD): 2026-11-02
+Time (HH:MM): 09:00
+Slot held: AV1   2026-11-02 09:00-09:30  Dr. Amélie Tremblay (Family Medicine) at L1  [AVAILABLE]
+No referral required.
+Booked: A2: 2026-11-02 09:00-09:30, Olivier Côté with Dr. Amélie Tremblay at Clinique Centre-Ville, service General consultation, status BOOKED
+
+ 1  Import availabilities from CSV
+ 2  Export availabilities to CSV
+ 3  Make availability
+ 4  Search availability
+ 5  Book an appointment
+ 6  Register patient
+ 7  Search patient
+ 8  Add patient to waiting list
+ 9  Offer a freed slot to the waiting list
+ 10 List professionals, services, locations, patients
+ 0  Exit
+Choice: 5
+Patient id (blank to search): P2
+Medical services:
+  S1 General consultation (Family Medicine)
+  S2 Primary care assessment (Primary Care)
+  S3 Cardiology consultation (Cardiology, referral required)
+  S4 Dermatology consultation (Dermatology, referral required)
+  S5 Orthopedic evaluation (Orthopedics, referral required)
+Service id: S1
+Professional id (option 4 shows who is free): HP1
+Location id [L1]: L1
+Date (YYYY-MM-DD): 2026-11-02
+Time (HH:MM): 09:00
+Error: scheduling conflict for patient
+
+ 1  Import availabilities from CSV
+ 2  Export availabilities to CSV
+ 3  Make availability
+ 4  Search availability
+ 5  Book an appointment
+ 6  Register patient
+ 7  Search patient
+ 8  Add patient to waiting list
+ 9  Offer a freed slot to the waiting list
+ 10 List professionals, services, locations, patients
+ 0  Exit
+Choice: 5
+Patient id (blank to search): P1
+Medical services:
+  S1 General consultation (Family Medicine)
+  S2 Primary care assessment (Primary Care)
+  S3 Cardiology consultation (Cardiology, referral required)
+  S4 Dermatology consultation (Dermatology, referral required)
+  S5 Orthopedic evaluation (Orthopedics, referral required)
+Service id: S4
+Professional id (option 4 shows who is free): HP1
+Location id [L1]: L1
+Date (YYYY-MM-DD): 2026-11-09
+Time (HH:MM): 09:00
+Error: service not offered by this professional at this location
+
+ 1  Import availabilities from CSV
+ 2  Export availabilities to CSV
+ 3  Make availability
+ 4  Search availability
+ 5  Book an appointment
+ 6  Register patient
+ 7  Search patient
+ 8  Add patient to waiting list
+ 9  Offer a freed slot to the waiting list
+ 10 List professionals, services, locations, patients
+ 0  Exit
+Choice: 4
+Leave a criterion blank to ignore it.
+Professional id: 
+Specialty (e.g. Cardiology): 
+From date (YYYY-MM-DD): 2026-11-10
+To date (YYYY-MM-DD): 2026-11-01
+From time (HH:MM): 
+To time (HH:MM): 
+Error: invalid criteria (dateFrom after dateTo, or timeFrom not before timeTo)
+
+ 1  Import availabilities from CSV
+ 2  Export availabilities to CSV
+ 3  Make availability
+ 4  Search availability
+ 5  Book an appointment
+ 6  Register patient
+ 7  Search patient
+ 8  Add patient to waiting list
+ 9  Offer a freed slot to the waiting list
+ 10 List professionals, services, locations, patients
+ 0  Exit
+Choice: 8
+Patient id: P2
+Give at least one of: professional, specialty, date range.
+Professional id: HP5
+Specialty: 
+From date (YYYY-MM-DD): 2026-11-05
+To date (YYYY-MM-DD): 2026-11-30
+Added: W1: Olivier Côté (tel 514-555-0102), Dr. David Roy, 2026-11-05 to 2026-11-30, priority 1, WAITING
+
+ 1  Import availabilities from CSV
+ 2  Export availabilities to CSV
+ 3  Make availability
+ 4  Search availability
+ 5  Book an appointment
+ 6  Register patient
+ 7  Search patient
+ 8  Add patient to waiting list
+ 9  Offer a freed slot to the waiting list
+ 10 List professionals, services, locations, patients
+ 0  Exit
+Choice: 3
+Professional id (e.g. HP1): HP5
+Location id [L1]: L1
+Start date (YYYY-MM-DD): 2026-11-10
+End date (YYYY-MM-DD): 2026-11-10
+Repeat: W = day(s) of week, M = monthly [W]: W
+Day(s) of week, e.g. MON or MON,WED: TUE
+Start time (HH:MM): 08:00
+End time (HH:MM): 08:45
+Slot length in minutes [30]: 45
+1 availabilities created (every [TUESDAY]).
+  first: AV37  2026-11-10 08:00-08:45  Dr. David Roy (Orthopedics) at L1  [AVAILABLE]
+  last:  AV37  2026-11-10 08:00-08:45  Dr. David Roy (Orthopedics) at L1  [AVAILABLE]
+
+ 1  Import availabilities from CSV
+ 2  Export availabilities to CSV
+ 3  Make availability
+ 4  Search availability
+ 5  Book an appointment
+ 6  Register patient
+ 7  Search patient
+ 8  Add patient to waiting list
+ 9  Offer a freed slot to the waiting list
+ 10 List professionals, services, locations, patients
+ 0  Exit
+Choice: 9
+Freed availability id (e.g. AV3): AV37
+Offer this slot by phone to: W1: Olivier Côté (tel 514-555-0102), Dr. David Roy, 2026-11-05 to 2026-11-30, priority 1, WAITING
+Did the patient accept? (Y/N): Y
+Accepted. Book it with option 5 for patient P2 at AV37.
+
+ 1  Import availabilities from CSV
+ 2  Export availabilities to CSV
+ 3  Make availability
+ 4  Search availability
+ 5  Book an appointment
+ 6  Register patient
+ 7  Search patient
+ 8  Add patient to waiting list
+ 9  Offer a freed slot to the waiting list
+ 10 List professionals, services, locations, patients
+ 0  Exit
+Choice: 2
+CSV file to write [export/availabilities_export.csv]: export/demo_export.csv
+37 availabilities exported to export/demo_export.csv
+
+ 1  Import availabilities from CSV
+ 2  Export availabilities to CSV
+ 3  Make availability
+ 4  Search availability
+ 5  Book an appointment
+ 6  Register patient
+ 7  Search patient
+ 8  Add patient to waiting list
+ 9  Offer a freed slot to the waiting list
+ 10 List professionals, services, locations, patients
+ 0  Exit
+Choice: 1
+CSV file to import [data/availabilities.csv]: data/missing.csv
+Error: cannot read file data/missing.csv
+
+ 1  Import availabilities from CSV
+ 2  Export availabilities to CSV
+ 3  Make availability
+ 4  Search availability
+ 5  Book an appointment
+ 6  Register patient
+ 7  Search patient
+ 8  Add patient to waiting list
+ 9  Offer a freed slot to the waiting list
+ 10 List professionals, services, locations, patients
+ 0  Exit
+Choice: 0
+Bye.
